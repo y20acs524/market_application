@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="div-reg-form">
+        
+        <form method="POST" class="register-form">
+
+            {{form.hidden_tag()}}
+
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lOelurMrAF3whxawkmTpZPPxadrBs6C7rA&s"/>
+            <h3>Login to your account</h3>
+            <br/>
+
+            {{form.user_name.label()}}
+            {{form.user_name(class="form-control",placeholder="User Name")}}
+
+            {{form.password.label()}}
+            {{form.password(class="form-control",placeholder="Password")}}
+
+
+            <br>
+
+            {{form.submit(class="button btn-primary btn-block")}}
+
+            <br>
+
+            <div>
+                Dont have an account?&nbsp;&nbsp;&nbsp;
+                <a type="button" class="button btn-secondary" href="{{url_for('register_page')}}">
+                    Register
+                </a>
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
+{% endblock %}

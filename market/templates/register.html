@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="div-reg-form">
+        
+        <form method="POST" class="register-form">
+
+            {{form.hidden_tag()}}
+
+            <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4lOelurMrAF3whxawkmTpZPPxadrBs6C7rA&s"/>
+            <h3>Please create your account</h3>
+            <br/>
+
+            {{form.user_name.label()}}
+            {{form.user_name(class="form-control",placeholder="User Name")}}
+
+            {{form.email_address.label()}}
+            {{form.email_address(class="form-control",placeholder="Email address")}}
+
+            {{form.password1.label()}}
+            {{form.password1(class="form-control",placeholder="Password")}}
+
+            {{form.password2.label()}}
+            {{form.password2(class="form-control",placeholder="Confirm Password")}}
+
+            <br>
+
+            {{form.submit(class="button btn-primary btn-block")}}
+
+            <br>
+
+            <div>
+                Already have an account?&nbsp;&nbsp;&nbsp;
+                <a type="button" class="button btn-secondary" href="{{url_for('login_page')}}">
+                    Login
+                </a>
+            </div>
+
+
+
+        </form>
+    </div>
+</body>
+{% endblock %}
